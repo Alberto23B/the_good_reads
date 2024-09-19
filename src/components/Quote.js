@@ -5,7 +5,7 @@ function Quote() {
     const quote = getRandomQuote();
 
     return (
-        <p className="italic">{quote}</p>
+        <p className="italic max-w-2xl h-12 mx-auto">{quote}</p>
     )
 }
 

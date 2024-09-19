@@ -13,7 +13,7 @@ export default function SearchBar({data, setData}) {
                 "Content-Type": "application/json"
             }
         }).then(res => res.json()).catch((err) => console.error(err));
-          return response.items
+            return response.items       
         } catch (error) {
             throw new Error(`Error: ${error}`);
         }
@@ -23,12 +23,13 @@ export default function SearchBar({data, setData}) {
         for (let i in obj) {
             const { title } = obj[i].volumeInfo;
             let { authors } = obj[i].volumeInfo === undefined ? "" : obj[i].volumeInfo ;
-            const { smallThumbnail } = obj[i].volumeInfo.imageLinks === undefined ? "" : obj[i].volumeInfo.imageLinks
-            console.log(smallThumbnail);
+            const { smallThumbnail } = obj[i].volumeInfo.imageLinks === undefined ? "" : obj[i].volumeInfo.imageLinks;
+            const { infoLink } = obj[i].volumeInfo === undefined ? "" : obj[i].volumeInfo
             results.push({
                 "title" : title,
                 "author" : authors ? authors : "",
-                "img" : smallThumbnail 
+                "img" : smallThumbnail,
+                "info" : infoLink 
             });
         }
     }
@@ -41,7 +42,8 @@ export default function SearchBar({data, setData}) {
         }
         const response = await fetchData(query);
         if (!response) {
-            setData(["Not Found"]);     
+            alert("No results matching the search")
+            setData([]);     
         } else {
             extractVolumeInfo(response);
             setData(() => results);
@@ -53,8 +55,8 @@ export default function SearchBar({data, setData}) {
         <div className="flex items-center flex-col my-6">
             <p className="p-4">Today I feel like reading...</p>
             <form method="get">
-                <input id="search" type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
-                <input className="border border-1 border-black" type="submit" value="Search" onClick={handleClick}/>
+                <input className="rounded-md w-64" id="search" type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
+                <input className="border bg-zinc-600 w-fit rounded-md text-white px-4 mx-2" type="submit" value="Search" onClick={handleClick}/>
             </form>
         </div>
     )

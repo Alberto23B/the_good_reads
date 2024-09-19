@@ -8,14 +8,19 @@ function App() {
   const [data, setData] = useState([])
 
   return (
-    <div className=" h-screen bg-slate-400">
-      <header className=" text-center m-8">
-        <h1 className=' text-7xl my-10' >The Good Reads</h1>
+    <>
+    <div className=" max-h-screen mt-10">
+      <header className=" text-center m-8 mt-0">
+        <h1 className=' text-7xl mb-10' >The Good Reads</h1>
         <Quote />
       </header>
-      <SearchBar data={data} setData={setData} />
-      <Results data={data} />
+      <div className=' min-h-fit'>
+        <SearchBar data={data} setData={setData} />
+        <Results data={data} />
+      </div>
+      <p className=' font-thin relative bottom-0 float-right mr-4'>Made with ❤️ by Alberto </p>
     </div>
+    </>
   );
 }
 
