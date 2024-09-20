@@ -18,7 +18,7 @@ function App() {
         <SearchBar data={data} setData={setData} />
         <Results data={data} />
       </div>
-      <p className=' font-thin relative bottom-0 float-right mr-4'>Made with ❤️ by Alberto </p>
+      <p className='font-thin mr-4 float-right'>Made with ❤️ by Alberto </p>
     </div>
     </>
   );

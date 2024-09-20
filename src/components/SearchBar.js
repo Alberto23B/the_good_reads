@@ -56,7 +56,7 @@ export default function SearchBar({data, setData}) {
             <p className="p-4">Today I feel like reading...</p>
             <form method="get">
                 <input className="rounded-md w-64" id="search" type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
-                <input className="border bg-zinc-600 w-fit rounded-md text-white px-4 mx-2" type="submit" value="Search" onClick={handleClick}/>
+                <input className="border bg-zinc-600 w-fit rounded-md text-white px-4 my-2 mx-auto block " type="submit" value="Search" onClick={handleClick}/>
             </form>
         </div>
     )

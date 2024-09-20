@@ -10,8 +10,8 @@ export default function Results({data}) {
             {data.length !== 0 ? data.map((el, i) => {
                 return (
                   <div key={i} className=" flex flex-row bg-white w-80 mx-1 my-2 rounded-lg">
-                      <img className="mr-2 max-w-24 h-32 rounded-l-lg my-auto" src={el.img ? el.img :  missingImg} alt="book cover"></img> 
-                    <div className="flex flex-col justify-between overflow-hidden">
+                      <img className="mr-2 max-w-24 h-32 aspect-square rounded-l-lg my-auto" src={el.img ? el.img :  missingImg} alt="book cover"></img> 
+                    <div className="flex flex-col justify-between overflow-hidden w-full">
                       <div>
                         <h3 className="font-bold line-clamp-2 ">{el.title}</h3>
                         {el.author[0] && <p>{el.author[0]}</p>}
