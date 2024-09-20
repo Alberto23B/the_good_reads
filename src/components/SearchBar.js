@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 
-export default function SearchBar({data, setData}) {
+export default function SearchBar({setData}) {
     const [query, setQuery] = useState("");
     let results = [];
 
@@ -52,11 +52,13 @@ export default function SearchBar({data, setData}) {
     }
 
     return ( 
-        <div className="flex items-center flex-col my-6">
-            <p className="p-4">Today I feel like reading...</p>
+        <div className="flex flex-col items-center my-6">
+            <p className="p-2">Today I feel like reading...</p>
             <form method="get">
-                <input className="rounded-md w-64" id="search" type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
-                <input className="border bg-zinc-600 w-fit rounded-md text-white px-4 my-2 mx-auto block " type="submit" value="Search" onClick={handleClick}/>
+                <input className="h-10 rounded-md w-72" 
+                type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
+                <input className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
+                type="submit" value="Search" onClick={handleClick}/>
             </form>
         </div>
     )

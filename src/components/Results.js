@@ -6,20 +6,24 @@ export default function Results({data}) {
     console.log(data)
     return (
         <>
-        <div className=" flex flex-row flex-wrap justify-center min-h-64">
+        <div className="flex flex-row flex-wrap justify-center min-h-64">
             {data.length !== 0 ? data.map((el, i) => {
                 return (
-                  <div key={i} className=" flex flex-row bg-white w-80 mx-1 my-2 rounded-lg">
-                      <img className="mr-2 max-w-24 h-32 aspect-square rounded-l-lg my-auto" src={el.img ? el.img :  missingImg} alt="book cover"></img> 
-                    <div className="flex flex-col justify-between overflow-hidden w-full">
+                  <div key={i} className="flex flex-row mx-1 my-2 bg-white rounded-lg w-80">
+                      <a href={el.info}>
+                        <img className="h-32 my-auto mr-2 rounded-l-lg max-w-24 aspect-square" src={el.img ? el.img :  missingImg} alt="book cover"></img> 
+                      </a>
+                    <div className="flex flex-col justify-between w-full overflow-hidden">
                       <div>
-                        <h3 className="font-bold line-clamp-2 ">{el.title}</h3>
-                        {el.author[0] && <p>{el.author[0]}</p>}
-                        {el.author[1] && <p>{el.author[1]}</p>}
-                        {el.author[2] && <p>{el.author[2]}</p>}
+                        <a href={el.info}>
+                          <h3 className="font-bold line-clamp-2 ">{el.title}</h3>
+                          {el.author[0] && <p>{el.author[0]}</p>}
+                          {el.author[1] && <p>{el.author[1]}</p>}
+                          {el.author[2] && <p>{el.author[2]}</p>}
+                        </a>
                       </div>  
                       <div className="flex justify-center">
-                        <a className=" border bg-zinc-600 w-fit rounded-md text-white px-2" href={el.info} rel="noopener noreferrer" target="_blank">More</a>
+                        <a className="px-2 text-white border rounded-md bg-zinc-600 w-fit" href={el.info} rel="noopener noreferrer" target="_blank">More</a>
                       </div>  
                     </div>  
                   </div>
@@ -27,8 +31,8 @@ export default function Results({data}) {
             }) 
             :
             <div> 
-              <img className=" mt-10 h-20" src={search} alt="no content to display"></img>
-              <p className=" italic font-thin">Waiting to dive in</p>
+              <img className="h-20 mt-10" src={search} alt="no content to display"></img>
+              <p className="italic font-thin">Waiting to dive in</p>
             </div>
             }
         </div>

@@ -9,10 +9,6 @@ h1 {
 }
 
 body {
-    background-image: url(./img/bg.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: #adc1c2;
 }
 
@@ -20,12 +16,3 @@ footer {
     text-align: end;
 }
 
-@media screen and (max-width: 980px) {
-    body {
-        background-image: url(./img/bg_sm.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: #adc1c2;
-    }
-}
