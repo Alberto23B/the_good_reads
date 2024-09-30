@@ -8,7 +8,6 @@ import illustration2 from "./img/illustration2.svg"
 
 function App() {
   const [data, setData] = useState([]);
-  const [favoriteList, setFavoriteList] = useState([]);
 
   return (
     <>
@@ -22,8 +21,8 @@ function App() {
         <img className="hidden h-32 mr-20 md:block aspect-square" src={illustration2} alt='illustration-two'></img>
       </header>
       <div className='min-h-fit'>
-        <SearchBar data={data} setData={setData} />
-        <Results data={data} favoriteList={favoriteList} setFavoriteList={setFavoriteList}/>
+        <SearchBar setData={setData}/>
+        <Results data={data}/>
       </div>
       <p className='float-right mr-4 font-thin'>Made with ❤️ by Alberto </p>
     </div>

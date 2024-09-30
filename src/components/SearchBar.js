@@ -29,7 +29,8 @@ export default function SearchBar({setData}) {
                 "title" : title,
                 "author" : authors ? authors : "",
                 "img" : smallThumbnail,
-                "info" : infoLink 
+                "info" : infoLink,
+                "isFavorite" : false 
             });
         }
     }
@@ -57,8 +58,12 @@ export default function SearchBar({setData}) {
             <form method="get">
                 <input className="h-10 rounded-md w-72" 
                 type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
-                <input className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
-                type="submit" value="Search" onClick={handleClick}/>
+                <div className="flex flex-row">
+                    <input className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
+                    type="submit" value="Search" onClick={handleClick}/>
+                    <button className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
+                    type="button">Show Favorite</button>
+                </div>
             </form>
         </div>
     )

@@ -1,15 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import missingImg from "../img/img_missing.jpg"
 import full_star from "../img/full_star.png";
 import empty_star from "../img/empty_star.png";
 
-export default function Card({data, i, setFavoriteList}) {
-    const [isFavorite, setIsFavorite] = useState(false)
-
-    const handleClickFavorite = () => {
-        setIsFavorite(!isFavorite);
-        setFavoriteList((prev) => [...prev, data])
-    }
+export default function Card({data, i}) {
 
     return (
                   <div key={i} className="flex flex-row mx-1 my-2 bg-white rounded-lg w-80">
@@ -27,8 +21,8 @@ export default function Card({data, i, setFavoriteList}) {
                       </div>  
                       <div className="flex justify-center">
                         <a className="px-2 text-white border rounded-md bg-zinc-600 w-fit" href={data.info} rel="noopener noreferrer" target="_blank">More</a>
-                        <button type="button" onClick={handleClickFavorite}>
-                            <img className="w-6 ml-4" src={isFavorite ? full_star : empty_star } alt="is the element favorite"/>
+                        <button type="button" onClick={() => data.isFavorite = true}>
+                            <img className="w-6 ml-4" src={data.isFavorite ? full_star : empty_star } alt="is the element favorite"/>
                         </button>
                       </div>  
                     </div>  
