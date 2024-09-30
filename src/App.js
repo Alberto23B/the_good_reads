@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <div className="max-h-screen">
+    <div className="max-h-full">
       <header className="flex w-full my-8 mt-10 text-center ">
         <img className="hidden h-32 ml-20 md:block aspect-square" src={illustration1} alt='illustration-one'></img>
         <div className='w-full'>

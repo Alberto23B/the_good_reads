@@ -6,7 +6,7 @@ export default function Results({data}) {
     console.log(data)
     return (
         <>
-        <div className="flex flex-row flex-wrap justify-center min-h-64">
+        <div className="flex flex-row flex-wrap justify-center min-h-56">
             {data.length !== 0 ? data.map((el, i) => {
                 return (
                   <div key={i} className="flex flex-row mx-1 my-2 bg-white rounded-lg w-80">
@@ -31,7 +31,7 @@ export default function Results({data}) {
             }) 
             :
             <div> 
-              <img className="h-20 mt-10" src={search} alt="no content to display"></img>
+              <img className="h-20 mt-2" src={search} alt="no content to display"></img>
               <p className="italic font-thin">Waiting to dive in</p>
             </div>
             }
