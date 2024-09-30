@@ -29,8 +29,7 @@ export default function SearchBar({setData}) {
                 "title" : title,
                 "author" : authors ? authors : "",
                 "img" : smallThumbnail,
-                "info" : infoLink,
-                "isFavorite" : false 
+                "info" : infoLink
             });
         }
     }
