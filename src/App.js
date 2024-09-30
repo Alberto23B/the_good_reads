@@ -7,7 +7,8 @@ import illustration1 from "./img/illustration1.svg"
 import illustration2 from "./img/illustration2.svg"
 
 function App() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  const [favoriteList, setFavoriteList] = useState([]);
 
   return (
     <>
@@ -22,7 +23,7 @@ function App() {
       </header>
       <div className='min-h-fit'>
         <SearchBar data={data} setData={setData} />
-        <Results data={data} />
+        <Results data={data} favoriteList={favoriteList} setFavoriteList={setFavoriteList}/>
       </div>
       <p className='float-right mr-4 font-thin'>Made with ❤️ by Alberto </p>
     </div>
