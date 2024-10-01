@@ -1,7 +1,7 @@
 import React from "react";
 import missingImg from "../img/img_missing.jpg"
-import full_star from "../img/full_star.png";
-import empty_star from "../img/empty_star.png";
+// import full_star from "../img/full_star.png";
+// import empty_star from "../img/empty_star.png";
 
 export default function Card({data, i}) {
 
@@ -21,9 +21,9 @@ export default function Card({data, i}) {
                       </div>  
                       <div className="flex justify-center">
                         <a className="px-2 text-white border rounded-md bg-zinc-600 w-fit" href={data.info} rel="noopener noreferrer" target="_blank">More</a>
-                        <button type="button" onClick={() => data.isFavorite = true}>
+                        {/* <button type="button" onClick={() => data.isFavorite = true}>
                             <img className="w-6 ml-4" src={data.isFavorite ? full_star : empty_star } alt="is the element favorite"/>
-                        </button>
+                        </button> */}
                       </div>  
                     </div>  
                   </div>

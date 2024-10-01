@@ -5,6 +5,8 @@ export default function SearchBar({setData}) {
     const [query, setQuery] = useState("");
     let results = [];
 
+    
+
     const fetchData = async (query) => {
         try {
           const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`, {
@@ -60,8 +62,6 @@ export default function SearchBar({setData}) {
                 <div className="flex flex-row">
                     <input className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
                     type="submit" value="Search" onClick={handleClick}/>
-                    <button className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
-                    type="button">Show Favorite</button>
                 </div>
             </form>
         </div>
