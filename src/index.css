@@ -9,7 +9,8 @@ h1 {
 }
 
 body {
-    background-color: #adc1c2;
+    background: linear-gradient(#abc4c6, #99b8b9, transparent), no-repeat center; 
+    background-size: cover; 
 }
 
 footer {
