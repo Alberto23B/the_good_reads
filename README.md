@@ -27,6 +27,7 @@
 List the ready features here:
 - Searching returns a list of the ten best suggestion for the query.
 - The website handles empty search and no matching search.
+- Loading animation while fetching data (using useEffect hook)
 
 ## Setup
 Run npm start to start development
@@ -38,7 +39,6 @@ Project is: _deployed_ / _further improvements in progress_
 ## Room for Improvement
 
 Room for improvement:
-- Loading data animation
 - Allow to save favorites and store them between searches
 
 ## Acknowledgements

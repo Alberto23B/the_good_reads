@@ -1,11 +1,8 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 
-export default function SearchBar({setData}) {
+export default function SearchBar({setData, setIsLoading}) {
     const [query, setQuery] = useState("");
     let results = [];
-
-    
 
     const fetchData = async (query) => {
         try {
@@ -42,6 +39,7 @@ export default function SearchBar({setData}) {
             alert("Please provide a title");
             return
         }
+        setIsLoading(true);
         const response = await fetchData(query);
         if (!response) {
             alert("No results matching the search")

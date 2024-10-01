@@ -1,12 +1,20 @@
-import React, {useState, useEffect} from "react";
-import Loading from "./Loading"
+import React, {useEffect} from "react";
 import Card from "./Card";
 import search from "../img/search.svg";
+import Loading from "./Loading";
 
-export default function Results({data}) {
+export default function Results({data, isLoading, setIsLoading}) {
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [data, setIsLoading])
+
+  if (isLoading) {
+    return <Loading />
+  }
+
     return (
         <>
-        <Loading></Loading>
           <div className="flex flex-row flex-wrap justify-center min-h-56">
           {data.length !== 0 ? data.map((data, i) => {
              return <Card data={data} i={i}/>

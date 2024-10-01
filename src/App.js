@@ -8,7 +8,8 @@ import illustration2 from "./img/illustration2.svg"
 
 function App() {
   const [data, setData] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false)
+  
   return (
     <>
     <div className="max-h-full">
@@ -21,8 +22,8 @@ function App() {
         <img className="hidden h-32 mr-20 md:block aspect-square" src={illustration2} alt='illustration-two'></img>
       </header>
       <div className='min-h-fit'>
-        <SearchBar setData={setData}/>
-        <Results data={data}/>
+        <SearchBar data={data} setIsLoading={setIsLoading} setData={setData} />
+        <Results isLoading={isLoading} setIsLoading={setIsLoading} data={data}/>
       </div>
       <p className='float-right mr-4 font-thin'>Made with ❤️ by Alberto </p>
     </div>
