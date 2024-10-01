@@ -33,9 +33,9 @@ function App() {
         </div>
         <img className="hidden h-32 mr-20 md:block aspect-square" src={illustration2} alt='illustration-two'></img>
       </header>
-      <div className='flex items-center justify-center'>
-        <button type='button' className='px-4 m-2 text-white border rounded-md h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>Show Favorites</button>
+      <div className='flex flex-col items-center justify-center md:justify-around md:flex-row'>
         <SearchBar data={data} setIsLoading={setIsLoading} setData={setData} />
+        <button type='button' className='px-4 m-2 text-white border rounded-md w-36 h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>Show Favorites</button>
       </div>
       {showFavorites ? 
       <div className='min-h-fit'>
@@ -46,7 +46,6 @@ function App() {
         <Results isLoading={isLoading} setIsLoading={setIsLoading} data={data} setFavorites={setFavorites}/>
       </div> 
     }
-      <p className='float-right mr-4 font-thin'>Made with ❤️ by Alberto </p>
     </div>
     </>
   );

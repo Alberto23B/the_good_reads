@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 h1 {
- font-family: "Shadows Into Light", sans-serif;
+ font-family: "Libre Caslon Display", serif;
 }
 
 body {
-    background: linear-gradient(#abc4c6, #99b8b9, transparent), no-repeat center; 
+    background: linear-gradient(0.25turn, #485f78, #678bac, transparent), no-repeat center; 
     background-size: cover; 
 }
 
@@ -17,10 +17,14 @@ footer {
     text-align: end;
 }
 
+.input {
+    min-width: 40vw;
+}
+
 .display-results {
-    background-color: #d5dddd;
+    background-color: #7395ba;
     border-radius: 10px;
-    box-shadow: 5px 5px 2px #859293;
+    box-shadow: 5px 5px 2px #485f78;
     max-width: 80vw;
     margin: 0 auto;
 }

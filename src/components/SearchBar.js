@@ -52,15 +52,15 @@ export default function SearchBar({setData, setIsLoading}) {
     }
 
     return ( 
-        <div className="flex flex-col items-center my-6">
-            <p className="p-2">Today I feel like reading...</p>
-            <form method="get">
-                <input className="h-10 rounded-md w-72" 
-                type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} required/>
-                <div className="flex flex-row">
-                    <input className="block px-4 mx-auto my-2 text-white border rounded-md bg-zinc-600 w-fit " 
-                    type="submit" value="Search" onClick={handleClick}/>
-                </div>
+        <div className="flex items-center w-2/4 my-6">
+            {/* <p className="p-2">Today I feel like reading...</p> */}
+            <form method="get" className="flex justify-center">
+                <input className="h-10 rounded-md input" 
+                type="text" name="q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Enter name or author..." required/>
+                {/* <div className="flex flex-row"> */}
+                <input className="block px-4 my-2 ml-4 text-white border rounded-md bg-zinc-600 w-fit " 
+                type="submit" value="Search" onClick={handleClick}/>
+                {/* </div> */}
             </form>
         </div>
     )
