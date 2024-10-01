@@ -3,13 +3,25 @@ import './App.css';
 import  Quote  from './components/Quote';
 import SearchBar from './components/SearchBar';
 import Results from './components/Results';
+import Favorites from './components/Favorites';
 import illustration1 from "./img/illustration1.svg"
 import illustration2 from "./img/illustration2.svg"
 
 function App() {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const [favorites, setFavorites] = useState([])
+  const [showFavorites, setShowFavorites] = useState(false);
+
+  const handleShowFavoritesClick = (e) => {
+    setShowFavorites(!showFavorites);
+    if (!showFavorites) {
+      e.target.innerHTML = "Hide Favorites"
+    } else {
+      e.target.innerHTML = "Show Favorites"
+    }
+  }
+
   return (
     <>
     <div className="max-h-full">
@@ -21,10 +33,19 @@ function App() {
         </div>
         <img className="hidden h-32 mr-20 md:block aspect-square" src={illustration2} alt='illustration-two'></img>
       </header>
-      <div className='min-h-fit'>
+      <div className='flex items-center justify-center'>
+        <button type='button' className='px-4 m-2 text-white border rounded-md h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>Show Favorites</button>
         <SearchBar data={data} setIsLoading={setIsLoading} setData={setData} />
-        <Results isLoading={isLoading} setIsLoading={setIsLoading} data={data}/>
       </div>
+      {showFavorites ? 
+      <div className='min-h-fit'>
+        <Favorites data={data} favorites={favorites} isLoading={isLoading} setIsLoading={setIsLoading}/>
+      </div> 
+      :
+      <div className='min-h-fit'>
+        <Results isLoading={isLoading} setIsLoading={setIsLoading} data={data} setFavorites={setFavorites}/>
+      </div> 
+    }
       <p className='float-right mr-4 font-thin'>Made with ❤️ by Alberto </p>
     </div>
     </>

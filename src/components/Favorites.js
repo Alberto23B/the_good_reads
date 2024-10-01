@@ -1,0 +1,29 @@
+import React, {useEffect} from "react";
+import Card from "./Card";
+import Loading from "./Loading";
+
+export default function Favorites({data, favorites, isLoading, setIsLoading}) {
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [data, setIsLoading])
+
+  if (isLoading) {
+    return <Loading />
+  }
+
+    return (
+        <>
+          <div className="flex flex-row flex-wrap justify-center min-h-56 favorites-bg">
+          {favorites.length !== 0 ? favorites.map((data, i) => {
+             return <Card data={data} i={i}/>
+            }) 
+            : 
+            <div> 
+              <p className="italic font-thin">You don't have favorites yet!</p>
+            </div>
+          }
+          </div>
+        </>
+    )
+}

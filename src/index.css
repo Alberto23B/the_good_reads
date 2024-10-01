@@ -16,6 +16,14 @@ footer {
     text-align: end;
 }
 
+.favorites-bg {
+    background-color: #d5dddd;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px #859293;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
 .dot {
     animation: bounce 0.5s infinite alternate 
 }
