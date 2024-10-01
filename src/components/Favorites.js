@@ -14,7 +14,7 @@ export default function Favorites({data, favorites, isLoading, setIsLoading}) {
 
     return (
         <>
-          <div className="flex flex-row flex-wrap justify-center min-h-56 favorites-bg">
+          <div className="flex flex-row flex-wrap items-center justify-center min-h-56 display-results">
           {favorites.length !== 0 ? favorites.map((data, i) => {
              return <Card data={data} i={i}/>
             }) 

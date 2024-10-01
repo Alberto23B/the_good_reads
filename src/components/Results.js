@@ -15,7 +15,7 @@ export default function Results({data, isLoading, setIsLoading}) {
 
     return (
         <>
-          <div className="flex flex-row flex-wrap justify-center min-h-56">
+          <div className="flex flex-row flex-wrap items-center justify-center min-h-56 display-results">
           {data.length !== 0 ? data.map((data, i) => {
              return <Card data={data} i={i}/>
             }) 
