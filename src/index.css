@@ -32,9 +32,7 @@ input[type="submit"]:active {
 }
 
 button {
-    box-shadow: 0 2px #999;
-    background-color: #1652F0;
-  
+    box-shadow: 0 2px #999;  
 }
 
 button:hover {

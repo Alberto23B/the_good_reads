@@ -12,13 +12,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [favorites, setFavorites] = useState([])
   const [showFavorites, setShowFavorites] = useState(false);
-
+  
   const handleShowFavoritesClick = (e) => {
     setShowFavorites(!showFavorites);
     if (!showFavorites) {
-      e.target.innerHTML = "Hide Favorites"
+      e.target.innerHTML = "Hide ♡"
     } else {
-      e.target.innerHTML = "Show Favorites"
+      e.target.innerHTML = "Show ♡"
     }
   }
 
@@ -35,15 +35,23 @@ function App() {
       </header>
       <div className='flex flex-col items-center justify-center md:justify-around md:flex-row'>
         <SearchBar data={data} setIsLoading={setIsLoading} setData={setData} />
-        <button type='button' className='px-4 m-2 text-white border rounded-md w-36 h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>Show Favorites</button>
+        <button type='button' className='px-4 m-2 text-white border rounded-md w-36 h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>Show ♡</button>
       </div>
       {showFavorites ? 
       <div className='min-h-fit'>
-        <Favorites data={data} favorites={favorites} isLoading={isLoading} setIsLoading={setIsLoading}/>
+        <Favorites 
+        data={data} 
+        favorites={favorites} setFavorites={setFavorites} 
+        isLoading={isLoading} setIsLoading={setIsLoading}
+        />
       </div> 
       :
       <div className='min-h-fit'>
-        <Results isLoading={isLoading} setIsLoading={setIsLoading} data={data} setFavorites={setFavorites}/>
+        <Results 
+        data={data} 
+        favorites={favorites} setFavorites={setFavorites} 
+        isLoading={isLoading} setIsLoading={setIsLoading} 
+        />
       </div> 
     }
     </div>

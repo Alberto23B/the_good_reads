@@ -3,7 +3,7 @@ import Card from "../components/Card";
 import search from "../img/search.png";
 import Loading from "./Loading";
 
-export default function Results({data, isLoading, setIsLoading}) {
+export default function Results({data, isLoading, favorites, setIsLoading, setFavorites}) {
 
   useEffect(() => {
     setIsLoading(false)
@@ -17,7 +17,7 @@ export default function Results({data, isLoading, setIsLoading}) {
         <>
           <div className="flex flex-row flex-wrap items-center justify-center min-h-56 display-results">
           {data.length !== 0 ? data.map((data, i) => {
-             return <Card data={data} i={i}/>
+             return <Card data={data} i={i} favorites={favorites} setFavorites={setFavorites} />
             }) 
             : 
             <div> 
