@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import Card from "../components/Card";
-import Loading from "./Loading";
+import Loading from "../presentational/Loading";
 
 export default function Favorites({data, favorites, isLoading, setIsLoading}) {
 

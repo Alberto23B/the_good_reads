@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import  Quote  from './components/Quote';
 import SearchBar from './components/SearchBar';
-import Results from './components/Results';
-import Favorites from './components/Favorites';
+import Results from './presentational/Results';
+import Favorites from './presentational/Favorites';
 import illustration1 from "./img/illustration1.svg"
 import illustration2 from "./img/illustration2.svg"
 
