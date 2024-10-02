@@ -1,37 +1,10 @@
 import React, { useState } from "react";
+import { extractVolumeInfo } from "../helpers/extractVolumeInfo";
+import { fetchData } from "../helpers/fetchData";
 
 export default function SearchBar({setData, setIsLoading}) {
     const [query, setQuery] = useState("");
     let results = [];
-
-    const fetchData = async (query) => {
-        try {
-          const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(res => res.json()).catch((err) => console.error(err));
-            return response.items       
-        } catch (error) {
-            throw new Error(`Error: ${error}`);
-        }
-    }
-
-    const extractVolumeInfo = (obj) => {
-        for (let i in obj) {
-            const { title } = obj[i].volumeInfo;
-            let { authors } = obj[i].volumeInfo === undefined ? "" : obj[i].volumeInfo ;
-            const { smallThumbnail } = obj[i].volumeInfo.imageLinks === undefined ? "" : obj[i].volumeInfo.imageLinks;
-            const { infoLink } = obj[i].volumeInfo === undefined ? "" : obj[i].volumeInfo
-            results.push({
-                "title" : title,
-                "author" : authors ? authors : "",
-                "img" : smallThumbnail,
-                "info" : infoLink
-            });
-        }
-    }
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -45,7 +18,7 @@ export default function SearchBar({setData, setIsLoading}) {
             alert("No results matching the search")
             setData([]);     
         } else {
-            extractVolumeInfo(response);
+            extractVolumeInfo(results, response);
             setData(() => results);
         }
         setQuery("");
