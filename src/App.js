@@ -25,7 +25,7 @@ function App() {
   return (
     <>
     <div className="max-h-full">
-      <header className="flex w-full my-8 mt-10 text-center ">
+      <header className="flex w-2/3 mx-auto my-8 mt-10 text-center ">
         <img className="hidden h-32 ml-20 md:block aspect-square" src={illustration1} alt='illustration-one'></img>
         <div className='w-full'>
           <h1 className='mb-10 text-7xl' >The Good Reads</h1>
