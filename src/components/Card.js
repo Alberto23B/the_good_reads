@@ -1,25 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import missingImg from "../img/img_missing.jpg"
 
-export default function Card({data, i, favorites, setFavorites, state = false}) {
-   const [isFavorite, setIsFavorite] = useState(state);
+export default function Card({data, i, favorites, setFavorites}) {
 
-    useEffect(() => {
-      if (favorites && [favorites].filter((el) => el.title === data.title).length !== 0) {
-        setIsFavorite(true)
-      }
-    }, [data.title, favorites])
+   const isFavorite = favorites.some((fav) => fav.title === data.title);
 
     const handleClickFavorites = (data) => {
       setFavorites((prev) => {
         return [...prev, data]
       });
-      setIsFavorite(true)
     }
 
     const handleRemoveFavorites = (data) => {
       setFavorites((prev) => [...prev].filter((fav) => fav.title !== data.title))
-      setIsFavorite(false);
     }
 
 

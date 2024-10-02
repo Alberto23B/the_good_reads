@@ -26,8 +26,9 @@
 ## Features
 List the ready features here:
 - Searching returns a list of the ten best suggestion for the query.
+- The user can select any book as favorite and find it in the "favorites" section.
 - The website handles empty search and no matching search.
-- Loading animation while fetching data (using useEffect hook)
+- Loading animation while fetching data (using useEffect hook).
 
 ## Setup
 Run npm start to start development
@@ -39,7 +40,7 @@ Project is: _deployed_ / _further improvements in progress_
 ## Room for Improvement
 
 Room for improvement:
-- Allow to save favorites and store them between searches
+- Store favorites between searches
 
 ## Acknowledgements
 Give credit here.

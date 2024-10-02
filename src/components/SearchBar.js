@@ -26,14 +26,11 @@ export default function SearchBar({setData, setIsLoading}) {
 
     return ( 
         <div className="flex items-center w-2/4 my-6">
-            {/* <p className="p-2">Today I feel like reading...</p> */}
             <form method="get" className="flex justify-center">
                 <input className="h-10 px-3 rounded-md input" 
                 type="search" name="q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Find your next read..." required/>
-                {/* <div className="flex flex-row"> */}
                 <input className="block px-4 my-2 ml-4 text-white border rounded-md bg-zinc-600 w-fit " 
                 type="submit" value="Search" onClick={handleClick}/>
-                {/* </div> */}
             </form>
         </div>
     )
