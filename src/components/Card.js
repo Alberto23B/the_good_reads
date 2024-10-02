@@ -20,7 +20,11 @@ export default function Card({data, i}) {
                         </a>
                       </div>  
                       <div className="flex justify-center">
-                        <a className="px-2 text-white border rounded-md bg-zinc-600 w-fit" href={data.info} rel="noopener noreferrer" target="_blank">More</a>
+                        <a  href={data.info} rel="noopener noreferrer" target="_blank">
+                          <button className="px-2 text-white border rounded-md bg-zinc-600 w-fit card-button">
+                            More
+                          </button>
+                          </a>
                         {/* <button type="button" onClick={() => data.isFavorite = true}>
                             <img className="w-6 ml-4" src={data.isFavorite ? full_star : empty_star } alt="is the element favorite"/>
                         </button> */}

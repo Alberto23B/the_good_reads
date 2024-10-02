@@ -17,6 +17,37 @@ footer {
     text-align: end;
 }
 
+input[type="submit"] {
+    background-color: #1652F0;
+    box-shadow: 0 2px #999;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(42, 48, 54);
+}
+
+input[type="submit"]:active {
+    background-color: rgb(42, 48, 54);
+    box-shadow: 0 1px rgb(65, 74, 83);
+    transform: translateY(2px) ;
+}
+
+button {
+    box-shadow: 0 2px #999;
+    background-color: #1652F0;
+  
+}
+
+button:hover {
+    background-color: rgb(42, 48, 54);
+}
+
+button:active {
+    background-color: rgb(42, 48, 54);
+    box-shadow: 0 1px rgb(65, 74, 83);
+    transform: translateY(2px) ;
+}
+
 .input {
     min-width: 40vw;
 }
@@ -46,4 +77,6 @@ footer {
         translate: 0 10px;
     }
 }
+
+
 
