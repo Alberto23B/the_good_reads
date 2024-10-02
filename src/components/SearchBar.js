@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { extractVolumeInfo } from "../helpers/extractVolumeInfo";
 import { fetchData } from "../helpers/fetchData";
 
-export default function SearchBar({setData, setIsLoading}) {
+export default function SearchBar({setData, setIsLoading, setShowFavorites}) {
     const [query, setQuery] = useState("");
     let results = [];
 
@@ -12,11 +12,12 @@ export default function SearchBar({setData, setIsLoading}) {
             alert("Please provide a title");
             return
         }
+        setData([])
+        setShowFavorites(false)
         setIsLoading(true);
         const response = await fetchData(query);
         if (!response) {
-            alert("No results matching the search")
-            setData([]);     
+            alert("No results matching the search")    
         } else {
             extractVolumeInfo(results, response);
             setData(() => results);

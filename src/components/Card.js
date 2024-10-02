@@ -25,9 +25,7 @@ export default function Card({data, i, favorites, setFavorites}) {
                   <div>
                     <a href={data.info}>
                       <h3 className="font-bold line-clamp-2 ">{data.title}</h3>
-                      {data.author[0] && <p>{data.author[0]}</p>}
-                      {data.author[1] && <p>{data.author[1]}</p>}
-                      {data.author[2] && <p>{data.author[2]}</p>}
+                      {data.author[0] && <p className="line-clamp-1">{data.author[0]}</p>}
                     </a>
                   </div>  
                   <div className="flex justify-center">

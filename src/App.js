@@ -15,12 +15,8 @@ function App() {
   
   const handleShowFavoritesClick = (e) => {
     setShowFavorites(!showFavorites);
-    if (!showFavorites) {
-      e.target.innerHTML = "Hide ♡"
-    } else {
-      e.target.innerHTML = "Show ♡"
-    }
   }
+
 
   return (
     <>
@@ -34,13 +30,13 @@ function App() {
         <img className="hidden h-32 mr-20 md:block aspect-square" src={illustration2} alt='illustration-two'></img>
       </header>
       <div className='flex flex-col items-center justify-center md:justify-around md:flex-row'>
-        <SearchBar data={data} setIsLoading={setIsLoading} setData={setData} />
-        <button type='button' className='px-4 m-2 text-white border rounded-md w-36 h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>Show ♡</button>
+        <SearchBar setShowFavorites={setShowFavorites} setIsLoading={setIsLoading} setData={setData} />
+        <button type='button' className='w-24 px-4 m-2 text-white border rounded-md h-fit bg-zinc-600' onClick={handleShowFavoritesClick}>♡</button>
       </div>
       {showFavorites ? 
       <div className='min-h-fit'>
         <Favorites 
-        data={data} 
+        data={data} setShowFavorites={setShowFavorites} 
         favorites={favorites} setFavorites={setFavorites} 
         isLoading={isLoading} setIsLoading={setIsLoading}
         />

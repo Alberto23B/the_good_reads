@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Card from "../components/Card";
 import Loading from "../presentational/Loading";
 
-export default function Favorites({data, favorites, setFavorites, isLoading, setIsLoading}) {
+export default function Favorites({data, setShowFavorites, favorites, setFavorites, isLoading, setIsLoading}) {
   
   useEffect(() => {
     setIsLoading(false)
@@ -19,6 +19,7 @@ export default function Favorites({data, favorites, setFavorites, isLoading, set
     return (
         <>
           <div className="flex flex-row flex-wrap items-center justify-center min-h-56 display-results">
+            <h3 className="w-full my-2 text-2xl font-bold text-center">Favorites</h3>  
           {favorites.length !== 0 ? favorites.map((data, i) => {
              return (
              <Card data={data} i={i} favorites={favorites} setFavorites={setFavorites}/>
