@@ -5,90 +5,89 @@
 @tailwind utilities;
 
 @layer utilities {
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-        border-radius: 12px;
-        background-color: #e7e7e712;
-    }
-  
-    ::-webkit-scrollbar-thumb {
-        border-radius: 6px;
-        background-color: #32366d;
-    }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 12px;
+    background-color: #e7e7e712;
   }
 
-h1, h3 {
- font-family: "Libre Caslon Display", serif;
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #32366d;
+  }
+}
+
+h1,
+h3 {
+  font-family: "Libre Caslon Display", serif;
 }
 
 body {
-    background: linear-gradient(0.25turn, #485f78, #678bac, transparent), no-repeat center; 
-    background-size: cover; 
+  background: linear-gradient(0.25turn, #485f78, #678bac, transparent),
+    no-repeat center;
+  background-size: cover;
 }
 
 footer {
-    text-align: end;
+  text-align: end;
 }
 
 input[type="submit"] {
-    box-shadow: 0 2px #999;
+  box-shadow: 0 2px #999;
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(42, 48, 54);
+  background-color: rgb(42, 48, 54);
 }
 
 input[type="submit"]:active {
-    background-color: rgb(42, 48, 54);
-    box-shadow: 0 1px rgb(65, 74, 83);
-    transform: translateY(2px) ;
+  background-color: rgb(42, 48, 54);
+  box-shadow: 0 1px rgb(65, 74, 83);
+  transform: translateY(2px);
 }
 
 button {
-    box-shadow: 0 2px #999;  
+  box-shadow: 0 2px #999;
 }
 
 button:hover {
-    background-color: rgb(42, 48, 54);
+  background-color: rgb(42, 48, 54);
 }
 
 button:active {
-    background-color: rgb(42, 48, 54);
-    box-shadow: 0 1px rgb(65, 74, 83);
-    transform: translateY(2px) ;
+  background-color: rgb(42, 48, 54);
+  box-shadow: 0 1px rgb(65, 74, 83);
+  transform: translateY(2px);
 }
 
 .input {
-    min-width: 50vw;
+  min-width: 50vw;
 }
 
 .display-results {
-    background-color: #7395ba;
-    border-radius: 10px;
-    box-shadow: 5px 5px 2px #485f78;
-    max-width: 80vw;
-    margin: 0 auto;
+  background-color: #7395ba;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px #485f78;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 .dot {
-    animation: bounce 0.5s infinite alternate 
+  animation: bounce 0.5s infinite alternate;
 }
 
 .dot:nth-child(2) {
-    animation-delay: 100ms;
+  animation-delay: 100ms;
 }
 
 .dot:nth-child(3) {
-    animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 
 @keyframes bounce {
-    100% {
-        translate: 0 10px;
-    }
+  100% {
+    translate: 0 10px;
+  }
 }
-
-
-
