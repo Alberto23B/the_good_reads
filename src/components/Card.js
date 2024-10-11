@@ -3,7 +3,7 @@ import missingImg from "../img/img_missing.jpg"
 
 export default function Card({data, i, favorites, setFavorites}) {
 
-   const isFavorite = favorites.some((fav) => fav.title === data.title);
+   const isFavorite = favorites.some((fav) => fav.info === data.info);
 
     const handleClickFavorites = (data) => {
       setFavorites((prev) => {
@@ -12,7 +12,7 @@ export default function Card({data, i, favorites, setFavorites}) {
     }
 
     const handleRemoveFavorites = (data) => {
-      setFavorites((prev) => [...prev].filter((fav) => fav.title !== data.title))
+      setFavorites((prev) => [...prev].filter((fav) => fav.info !== data.info))
     }
 
 
