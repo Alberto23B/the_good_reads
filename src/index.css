@@ -4,6 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 12px;
+        background-color: #e7e7e712;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: #32366d;
+    }
+  }
+
 h1, h3 {
  font-family: "Libre Caslon Display", serif;
 }

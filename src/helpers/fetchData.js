@@ -1,6 +1,6 @@
 export const fetchData = async (query) => {
     try {
-      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`, {
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
