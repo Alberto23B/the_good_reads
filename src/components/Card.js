@@ -26,8 +26,12 @@ export default function Card({ data, i, favorites, setFavorites }) {
       <div className="flex flex-col justify-between w-full overflow-hidden">
         <div>
           <a href={data.info}>
-            <h3 className="font-bold line-clamp-2 ">{data.title}</h3>
-            {data.author[0] && <p className="line-clamp-1">{data.author[0]}</p>}
+            <h3 className="line-clamp-2 ">{data.title}</h3>
+            {data.author[0] && (
+              <p className="text-sm font-light line-clamp-1">
+                {data.author[0]}
+              </p>
+            )}
           </a>
         </div>
         <div className="flex justify-center">

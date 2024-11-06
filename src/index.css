@@ -5,6 +5,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    background: linear-gradient(0.25turn, #485f78, #678bac, transparent),
+      no-repeat center;
+    background-size: cover;
+  }
+
+  footer {
+    text-align: end;
+  }
+
+  button {
+    box-shadow: 0 2px #999;
+  }
+
+  button:hover {
+    background-color: rgb(42, 48, 54);
+  }
+
+  button:active {
+    background-color: rgb(42, 48, 54);
+    box-shadow: 0 1px rgb(65, 74, 83);
+    transform: translateY(2px);
+  }
+  input[type="submit"] {
+    box-shadow: 0 2px #999;
+  }
+
+  input[type="submit"]:hover {
+    background-color: rgb(42, 48, 54);
+  }
+
+  input[type="submit"]:active {
+    background-color: rgb(42, 48, 54);
+    box-shadow: 0 1px rgb(65, 74, 83);
+    transform: translateY(2px);
+  }
+}
+
+@layer components {
+  .display-results {
+    background-color: #7395ba;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px #485f78;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+
+  .dot {
+    animation: bounce 0.5s infinite alternate;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 100ms;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 200ms;
+  }
+}
+
 @layer utilities {
   ::-webkit-scrollbar {
     width: 6px;
@@ -18,76 +79,6 @@
     border-radius: 6px;
     background-color: #32366d;
   }
-}
-
-h1 {
-  font-family: "Libre Caslon Display", serif;
-}
-
-h3 {
-  font-family: "Inter", "Prosto One", sans-serif;
-}
-
-body {
-  background: linear-gradient(0.25turn, #485f78, #678bac, transparent),
-    no-repeat center;
-  background-size: cover;
-}
-
-footer {
-  text-align: end;
-}
-
-input[type="submit"] {
-  box-shadow: 0 2px #999;
-}
-
-input[type="submit"]:hover {
-  background-color: rgb(42, 48, 54);
-}
-
-input[type="submit"]:active {
-  background-color: rgb(42, 48, 54);
-  box-shadow: 0 1px rgb(65, 74, 83);
-  transform: translateY(2px);
-}
-
-button {
-  box-shadow: 0 2px #999;
-}
-
-button:hover {
-  background-color: rgb(42, 48, 54);
-}
-
-button:active {
-  background-color: rgb(42, 48, 54);
-  box-shadow: 0 1px rgb(65, 74, 83);
-  transform: translateY(2px);
-}
-
-.input {
-  min-width: 50vw;
-}
-
-.display-results {
-  background-color: #7395ba;
-  border-radius: 10px;
-  box-shadow: 5px 5px 2px #485f78;
-  max-width: 80vw;
-  margin: 0 auto;
-}
-
-.dot {
-  animation: bounce 0.5s infinite alternate;
-}
-
-.dot:nth-child(2) {
-  animation-delay: 100ms;
-}
-
-.dot:nth-child(3) {
-  animation-delay: 200ms;
 }
 
 @keyframes bounce {

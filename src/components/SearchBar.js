@@ -32,7 +32,7 @@ export default function SearchBar({ setData, setIsLoading, setShowFavorites }) {
         className="flex flex-col items-center justify-center md:flex-row"
       >
         <input
-          className="h-10 px-3 rounded-md input"
+          className="h-10 px-3 rounded-md min-w-[50vw]"
           type="search"
           name="q"
           value={query}

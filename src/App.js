@@ -27,7 +27,7 @@ function App() {
             alt="illustration-one"
           ></img>
           <div className="w-full">
-            <h1 className="mb-10 text-7xl">The Good Reads</h1>
+            <h1 className="mb-10 text-7xl font-lcd">The Good Reads</h1>
             <Quote />
           </div>
           <img
