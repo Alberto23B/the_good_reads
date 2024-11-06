@@ -44,7 +44,7 @@ function App() {
           />
           <button
             type="button"
-            className="w-24 px-4 m-2 text-white border rounded-md h-fit bg-zinc-600"
+            className="w-24 px-4 m-2 text-white rounded-md h-fit bg-zinc-600"
             onClick={handleShowFavoritesClick}
           >
             ♡

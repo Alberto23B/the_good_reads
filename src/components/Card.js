@@ -32,12 +32,12 @@ export default function Card({ data, i, favorites, setFavorites }) {
         </div>
         <div className="flex justify-center">
           <a href={data.info} rel="noopener noreferrer" target="_blank">
-            <button className="px-2 text-white border rounded-md bg-zinc-600 w-fit card-button">
+            <button className="px-2 text-white rounded-md bg-zinc-600 w-fit card-button">
               More
             </button>
           </a>
           <button
-            className="px-2 mx-2 text-white border rounded-md bg-zinc-600 w-fit card-button"
+            className="px-2 mx-2 text-white rounded-md bg-zinc-600 w-fit card-button"
             type="button"
             onClick={
               isFavorite

@@ -21,11 +21,9 @@ export default function Results({
   return (
     <>
       <div className="flex flex-row flex-wrap items-center justify-center overflow-auto min-h-56 max-h-96 md:max-h-full display-results ">
-        {data.length !== 0 && (
-          <h3 className="w-full my-2 text-2xl font-bold text-center">
-            Search results
-          </h3>
-        )}
+        {/* {data.length !== 0 && (
+          <h3 className="w-full my-2 text-2xl text-center">SEARCH RESULTS</h3>
+        )} */}
         {data.length !== 0 ? (
           data.map((data, i) => {
             return (

@@ -41,7 +41,7 @@ export default function SearchBar({ setData, setIsLoading, setShowFavorites }) {
           required
         />
         <input
-          className="block px-4 my-2 text-white border rounded-md md:ml-4 bg-zinc-600 w-fit "
+          className="block px-4 my-2 text-white rounded-md md:ml-4 bg-zinc-600 w-fit "
           type="submit"
           value="Search"
           onClick={handleClick}
