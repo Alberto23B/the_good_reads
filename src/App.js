@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <div className="max-h-full">
-        <header className="flex w-2/3 mx-auto my-8 mt-10 text-center ">
+        <header className="flex w-5/6 mx-auto my-8 mt-10 text-center ">
           <img
             className="hidden h-32 ml-20 md:block aspect-square"
             src={illustration1}
