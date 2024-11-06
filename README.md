@@ -9,7 +9,6 @@
 - [Features](#features)
 - [Setup](#setup)
 - [Project Status](#project-status)
-- [Room for Improvement](#room-for-improvement)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
@@ -40,12 +39,6 @@ Run npm start to start development
 ## Project Status
 
 Project is: _deployed_ / _further improvements in progress_
-
-## Room for Improvement
-
-Room for improvement:
-
-- Store favorites between searches
 
 ## Acknowledgements
 
