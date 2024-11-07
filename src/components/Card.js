@@ -50,10 +50,13 @@ export default function Card({ data, i, favorites, setFavorites }) {
       >
         <div>
           <a href={data.info}>
-            <h3 className="line-clamp-2 ">{data.title}</h3>
+            <h3 className="font-semibold line-clamp-2">{data.title}</h3>
             {data.author[0] && (
-              <p className="text-sm font-light line-clamp-1">
-                {data.author[0]}
+              <p className="text-sm line-clamp-1">{data.author[0]}</p>
+            )}
+            {display === "list" && (
+              <p className="text-xs font-light line-clamp-2">
+                {data.description}
               </p>
             )}
           </a>
