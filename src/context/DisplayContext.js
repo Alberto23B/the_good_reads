@@ -1,18 +1,31 @@
-// TODO: PASSARE DA USESTATE A USEREDUCER
-// (PERCHè SENNO' NON POSSO MODIFICARE LO STATO DA SWITCHLIST)
-
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
 export const DisplayContext = createContext(null);
-export const setDisplayContext = createContext(null);
+export const DisplayDispatchContext = createContext(null);
+
+function displayReducer(display, action) {
+  switch (action.type) {
+    case "toIcons": {
+      return "icons";
+    }
+    case "toList": {
+      return "list";
+    }
+    default: {
+      throw Error("Unknown action: " + action.type);
+    }
+  }
+}
+
+const initialDisplay = "icons";
 
 export function DisplayContextProvider({ children }) {
-  const [display, setDisplay] = useState("icon");
+  const [display, dispatch] = useReducer(displayReducer, initialDisplay);
 
   return (
     <DisplayContext.Provider value={display}>
-      <setDisplayContext.Provider value={setDisplay}>
+      <DisplayDispatchContext.Provider value={dispatch}>
         {children}
-      </setDisplayContext.Provider>
+      </DisplayDispatchContext.Provider>
     </DisplayContext.Provider>
   );
 }

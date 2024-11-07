@@ -18,6 +18,7 @@
 
   button {
     box-shadow: 0 2px #999;
+    position: relative;
   }
 
   button:hover {
@@ -26,8 +27,9 @@
 
   button:active {
     background-color: rgb(42, 48, 54);
-    box-shadow: 0 1px rgb(65, 74, 83);
-    transform: translateY(2px);
+    box-shadow: none;
+    top: 1px;
+    left: 1px;
   }
   input[type="submit"] {
     box-shadow: 0 2px #999;
@@ -45,11 +47,14 @@
 }
 
 @layer components {
+  .invert {
+    -webkit-filter: invert(0.75);
+    filter: invert(0.75);
+  }
   .display-results {
     background-color: #7395ba;
     border-radius: 10px;
     box-shadow: 5px 5px 2px #485f78;
-    max-width: 80vw;
     margin: 0 auto;
   }
 

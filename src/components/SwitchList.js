@@ -2,23 +2,40 @@ import React from "react";
 import list from "../img/list_view.svg";
 import icons from "../img/icons_view.svg";
 import { useContext } from "react";
-import { setDisplayContext, DisplayContext } from "../context/DisplayContext";
+import {
+  DisplayDispatchContext,
+  DisplayContext,
+} from "../context/DisplayContext";
 
 export default function SwitchList() {
   const display = useContext(DisplayContext);
-  const setDisplay = useContext(setDisplayContext);
+  const dispatch = useContext(DisplayDispatchContext);
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    display === "icons"
+      ? dispatch({ type: "toList" })
+      : dispatch({ type: "toIcons" });
+  };
 
   return (
     <>
       <button
-        className="w-24 px-4 m-2 text-white rounded-md h-fit bg-zinc-600"
+        className="w-12 px-2 text-white rounded-l-md h-fit bg-zinc-600"
         onClick={handleClick}
       >
         <img
-          className="h-6 m-auto"
-          src={display === "icons" ? icons : list}
+          className="h-6 m-auto invert"
+          src={icons}
+          alt="result view toggle"
+        />
+      </button>
+      <button
+        className="w-12 px-2 text-white rounded-r-md h-fit bg-zinc-600"
+        onClick={handleClick}
+      >
+        <img
+          className="h-6 m-auto invert"
+          src={list}
           alt="result view toggle"
         />
       </button>

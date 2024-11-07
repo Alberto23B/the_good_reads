@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import missingImg from "../img/img_missing.jpg";
+import { DisplayContext } from "../context/DisplayContext";
 
 export default function Card({ data, i, favorites, setFavorites }) {
   const isFavorite = favorites.some((fav) => fav.info === data.info);
+  const display = useContext(DisplayContext);
 
   const handleClickFavorites = (data) => {
     setFavorites((prev) => {
@@ -15,15 +17,37 @@ export default function Card({ data, i, favorites, setFavorites }) {
   };
 
   return (
-    <div key={i} className="flex flex-row mx-1 my-2 bg-white rounded-lg w-80">
+    <div
+      key={i}
+      className={`flex sm:flex-row mx-1 my-2 bg-white rounded-lg ${
+        display === "icons" ? "sm:w-80" : "w-11/12"
+      } ${display === "icons" ? "flex-col" : "sm: flex-row"}`}
+    >
       <a href={data.info}>
         <img
-          className="h-32 my-auto mr-2 rounded-l-lg max-w-24 aspect-square"
+          className={`h-32 my-auto mr-2 rounded-l-lg max-w-24 aspect-square`}
           src={data.img ? data.img : missingImg}
           alt="book cover"
         ></img>
       </a>
-      <div className="flex flex-col justify-between w-full overflow-hidden">
+      {display === "icons" && (
+        <button
+          className="w-full px-2 text-white rounded-md bg-zinc-600 card-button sm:hidden"
+          type="button"
+          onClick={
+            isFavorite
+              ? () => handleRemoveFavorites(data)
+              : () => handleClickFavorites(data)
+          }
+        >
+          {isFavorite ? "X" : "♡"}
+        </button>
+      )}
+      <div
+        className={`flex-col justify-between w-full overflow-hidden ${
+          display === "icons" ? "sm:flex hidden" : "flex"
+        }`}
+      >
         <div>
           <a href={data.info}>
             <h3 className="line-clamp-2 ">{data.title}</h3>

@@ -12,7 +12,7 @@ export default function SearchSection({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center md:justify-around md:flex-row">
+    <div className="flex flex-col items-center justify-center m-auto md:flex-row">
       <SearchBar
         setShowFavorites={setShowFavorites}
         setIsLoading={setIsLoading}
