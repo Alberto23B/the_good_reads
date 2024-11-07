@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scrollbar-gutter: stable;
+}
+
 @layer base {
   body {
     background: linear-gradient(0.25turn, #485f78, #678bac, transparent),
@@ -22,7 +26,7 @@
   }
 
   button:hover {
-    background-color: rgb(42, 48, 54);
+    background-color: rgb(30, 41, 59);
   }
 
   button:active {

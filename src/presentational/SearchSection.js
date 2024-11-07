@@ -23,7 +23,9 @@ export default function SearchSection({
       <div className="flex items-center justify-between lg:w-[80vw] w-full rounded-t-md m-auto bg-yellow-100">
         <button
           type="button"
-          className="w-24 text-white rounded-md h-fit bg-zinc-600"
+          className={`w-24 text-white rounded-md h-fit bg-zinc-600 ${
+            showFavorites ? "top-[2px] shadow-none bg-zinc-800" : ""
+          }`}
           onClick={handleShowFavoritesClick}
         >
           ♡
