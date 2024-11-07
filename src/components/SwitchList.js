@@ -22,6 +22,7 @@ export default function SwitchList() {
       <button
         className="w-12 px-2 text-white rounded-l-md h-fit bg-zinc-600"
         onClick={handleClick}
+        disabled={display === "icons"}
       >
         <img
           className="h-6 m-auto invert"
@@ -31,6 +32,7 @@ export default function SwitchList() {
       </button>
       <button
         className="w-12 px-2 text-white rounded-r-md h-fit bg-zinc-600"
+        disabled={display === "list"}
         onClick={handleClick}
       >
         <img
