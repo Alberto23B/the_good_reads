@@ -18,7 +18,7 @@ export default function SwitchList() {
   };
 
   return (
-    <>
+    <div className="relative top-[3px]">
       <button
         className="w-12 px-2 text-white rounded-l-md h-fit bg-zinc-600"
         onClick={handleClick}
@@ -41,6 +41,6 @@ export default function SwitchList() {
           alt="result view toggle"
         />
       </button>
-    </>
+    </div>
   );
 }

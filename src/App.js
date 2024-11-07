@@ -17,7 +17,7 @@ function App() {
   return (
     <DisplayContextProvider>
       <div className="max-h-full">
-        <header className="flex w-5/6 mx-auto my-8 mt-10 text-center ">
+        <header className="flex w-5/6 mx-auto my-2 mt-10 text-center">
           <img
             className="hidden h-32 ml-20 md:block aspect-square"
             src={illustration1}
@@ -25,7 +25,6 @@ function App() {
           ></img>
           <div className="w-full">
             <h1 className="mb-10 text-7xl font-lcd">The Good Reads</h1>
-            <Quote />
           </div>
           <img
             className="hidden h-32 mr-20 md:block aspect-square"
@@ -33,6 +32,7 @@ function App() {
             alt="illustration-two"
           ></img>
         </header>
+        <Quote />
         <SearchSection
           setData={setData}
           setIsLoading={setIsLoading}

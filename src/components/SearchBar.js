@@ -26,7 +26,7 @@ export default function SearchBar({ setData, setIsLoading, setShowFavorites }) {
   };
 
   return (
-    <div className="items-center flex-none w-2/4 my-6 md:flex">
+    <div className="items-center flex-none my-6 md:flex">
       <form method="get" className="flex flex-col items-center md:flex-row">
         <input
           className="h-10 px-3 rounded-md min-w-[40vw]"
