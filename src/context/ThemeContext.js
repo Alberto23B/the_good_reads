@@ -19,10 +19,10 @@ function themeReducer(theme, action) {
 const initialTheme = "light";
 
 export function ThemeContextProvider({ children }) {
-  const [page, dispatch] = useReducer(themeReducer, initialTheme);
+  const [theme, dispatch] = useReducer(themeReducer, initialTheme);
 
   return (
-    <ThemeContext.Provider value={page}>
+    <ThemeContext.Provider value={theme}>
       <ThemeDispatchContext.Provider value={dispatch}>
         {children}
       </ThemeDispatchContext.Provider>

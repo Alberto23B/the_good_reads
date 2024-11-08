@@ -3,6 +3,8 @@ import "./App.css";
 import Quote from "./components/Quote";
 import Results from "./presentational/Results";
 import Favorites from "./presentational/Favorites";
+import Nav from "./presentational/Nav";
+import ToggleTheme from "./components/ToggleTheme";
 import SearchSection from "./presentational/SearchSection";
 import illustration1 from "./img/illustration1.svg";
 import illustration2 from "./img/illustration2.svg";
@@ -13,6 +15,7 @@ import { ThemeContextProvider } from "./context/ThemeContext";
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   const favoritesStorage = JSON.parse(
     localStorage.getItem("favorites") || "[]"
   );

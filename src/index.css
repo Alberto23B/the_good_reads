@@ -10,11 +10,11 @@ html {
 }
 
 @layer base {
-  body {
+  /* body {
     background: linear-gradient(0.25turn, #485f78, #678bac, transparent),
       no-repeat center;
     background-size: cover;
-  }
+  } */
 
   footer {
     text-align: end;
