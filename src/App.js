@@ -12,7 +12,10 @@ import { PageContextProvider } from "./context/PagesContext";
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [favorites, setFavorites] = useState([]);
+  const favoritesStorage = JSON.parse(
+    localStorage.getItem("favorites") || "[]"
+  );
+  const [favorites, setFavorites] = useState(favoritesStorage);
   const [showFavorites, setShowFavorites] = useState(false);
 
   return (

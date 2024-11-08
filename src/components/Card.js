@@ -5,14 +5,24 @@ import { DisplayContext } from "../context/DisplayContext";
 export default function Card({ data, i, favorites, setFavorites }) {
   const isFavorite = favorites.some((fav) => fav.info === data.info);
   const display = useContext(DisplayContext);
+  const favoritesStorage = JSON.parse(
+    localStorage.getItem("favorites") || "[]"
+  );
 
   const handleClickFavorites = (data) => {
+    const nextStorage = [...favoritesStorage, data];
+    localStorage.setItem("favorites", JSON.stringify(nextStorage));
     setFavorites((prev) => {
       return [...prev, data];
     });
   };
 
-  const handleRemoveFavorites = (data) => {
+  const handleRemoveFavorites = (data, i) => {
+    const nextStorage = favoritesStorage
+      .slice(0, i)
+      .concat(favoritesStorage.slice(i + 1));
+    console.log(nextStorage);
+    localStorage.setItem("favorites", JSON.stringify(nextStorage));
     setFavorites((prev) => [...prev].filter((fav) => fav.info !== data.info));
   };
 
@@ -36,7 +46,7 @@ export default function Card({ data, i, favorites, setFavorites }) {
           type="button"
           onClick={
             isFavorite
-              ? () => handleRemoveFavorites(data)
+              ? () => handleRemoveFavorites(data, i)
               : () => handleClickFavorites(data)
           }
         >

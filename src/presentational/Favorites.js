@@ -40,10 +40,9 @@ export default function Favorites({ favorites, setFavorites, isLoading }) {
   };
 
   const handleClearAll = () => {
+    localStorage.setItem("favorites", JSON.stringify([]));
     setFavorites([]);
   };
-
-  console.log(Math.ceil(favorites.length) / 20);
 
   return (
     <>
