@@ -26,7 +26,13 @@ function App() {
     <ThemeContextProvider>
       <DisplayContextProvider>
         <PageContextProvider>
-          <div className="max-h-full">
+          <div
+            className={`bg-cyan-200 dark:bg-black dark:text-stone-300
+            ${data.length && !showFavorites ? "h-full" : "h-[100vh]"}`}
+          >
+            <Nav>
+              <ToggleTheme />
+            </Nav>
             <header className="flex w-5/6 mx-auto my-2 mt-10 text-center">
               <img
                 className="hidden h-32 ml-20 md:block aspect-square"

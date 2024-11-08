@@ -20,7 +20,7 @@ export default function SearchSection({
           setData={setData}
         />
       </div>
-      <div className="flex items-center justify-between lg:w-[80vw] w-full rounded-t-md m-auto bg-yellow-100">
+      <div className="flex items-center justify-between lg:w-[80vw] w-full rounded-t-md m-auto bg-yellow-100 dark:bg-slate-600">
         <button
           type="button"
           className={`w-24 text-white rounded-md h-fit bg-zinc-600 ${

@@ -29,7 +29,7 @@ export default function Card({ data, i, favorites, setFavorites }) {
   return (
     <div
       key={i}
-      className={`flex sm:flex-row mx-1 my-2 bg-white rounded-lg 
+      className={`flex sm:flex-row mx-1 my-2 bg-white rounded-lg dark:bg-black
         ${display === "icons" ? "sm:w-80" : "w-11/12"} 
         ${display === "icons" ? "flex-col" : "sm: flex-row"}`}
     >
