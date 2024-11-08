@@ -19,9 +19,9 @@ export default function Card({ data, i, favorites, setFavorites }) {
   return (
     <div
       key={i}
-      className={`flex sm:flex-row mx-1 my-2 bg-white rounded-lg first:mt-6 ${
-        display === "icons" ? "sm:w-80" : "w-11/12"
-      } ${display === "icons" ? "flex-col" : "sm: flex-row"}`}
+      className={`flex sm:flex-row mx-1 my-2 bg-white rounded-lg 
+        ${display === "icons" ? "sm:w-80" : "w-11/12"} 
+        ${display === "icons" ? "flex-col" : "sm: flex-row"}`}
     >
       <a href={data.info}>
         <img
