@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Card from "../components/Card";
 import search from "../img/search.png";
 import Loading from "./Loading";
@@ -10,10 +10,6 @@ export default function Results({
   setIsLoading,
   setFavorites,
 }) {
-  useEffect(() => {
-    setIsLoading(false);
-  }, [data, setIsLoading]);
-
   if (isLoading) {
     return <Loading />;
   }

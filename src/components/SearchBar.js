@@ -23,6 +23,7 @@ export default function SearchBar({ setData, setIsLoading, setShowFavorites }) {
       setData(() => results);
     }
     setQuery("");
+    setIsLoading(false);
   };
 
   return (
