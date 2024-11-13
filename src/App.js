@@ -28,8 +28,7 @@ function App() {
         <DisplayContextProvider>
           <PageContextProvider>
             <div
-              className={`bg-[#E2EEF0] dark:bg-cool dark:text-stone-300
-            ${data.length && !showFavorites ? "h-full" : "h-[100vh]"}`}
+              className={`bg-[#E2EEF0] dark:bg-cool dark:text-stone-300 h-screen overflow-auto gutter`}
             >
               <Nav>
                 <ToggleTheme />

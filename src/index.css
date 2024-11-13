@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 html {
-  scrollbar-gutter: stable;
   background: linear-gradient(0.25turn, #485f78, #678bac, transparent),
     no-repeat center;
   background-size: cover;
@@ -43,13 +42,17 @@ html {
 }
 
 @layer components {
+  .gutter {
+    scrollbar-gutter: stable;
+  }
+
   .invert {
     -webkit-filter: invert(0.75);
     filter: invert(0.75);
   }
   .display-results {
     background-color: #7395ba;
-    box-shadow: 5px 5px 2px #485f78;
+    box-shadow: 0px 3px 10px 0.8px #8f8e8c;
     margin: 0 auto;
   }
 
@@ -88,11 +91,11 @@ html {
 }
 
 .resize-title {
-  animation: resizeTitle ease-out 0.8s forwards;
+  animation: resizeTitle ease-in-out 1.2s forwards;
 }
 
 .resize-container {
-  animation: resizeContainer ease-out 0.8s forwards;
+  animation: resizeContainer ease-in-out 1.2s forwards;
 }
 
 @keyframes resizeTitle {
@@ -101,7 +104,6 @@ html {
   }
   100% {
     font-size: 3rem;
-    animation-timing-function: ease-out;
   }
 }
 

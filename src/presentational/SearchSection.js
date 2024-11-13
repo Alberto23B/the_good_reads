@@ -20,7 +20,7 @@ export default function SearchSection({
           setData={setData}
         />
       </div>
-      <div className="flex items-center justify-end lg:w-[80vw] w-full border-slate-200 border rounded-t-md m-auto bg-pearl dark:bg-black">
+      <div className="flex items-center justify-end lg:w-[80vw] w-full border-slate-200 border rounded-t-md m-auto bg-pearl dark:bg-black ">
         <button
           type="button"
           className={`w-24 hover:bg-cadet dark:hover:bg-iron text-white mx-2 rounded-md h-fit bg-zinc-600 ${
