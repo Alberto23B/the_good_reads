@@ -32,10 +32,10 @@ export default function ToggleTheme() {
         id="theme"
         onChange={handleChange}
       >
-        <option key={1} value={"Light"}>
+        <option key={1} selected={theme === "light"} value={"Light"}>
           Light
         </option>
-        <option key={2} value={"Dark"}>
+        <option key={2} selected={theme === "dark"} value={"Dark"}>
           Dark
         </option>
       </select>
