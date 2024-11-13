@@ -1,8 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import {
-  SelectInputContext,
-  SelectInputDispatchContext,
-} from "../context/SelectInputContext";
+import React, { useState, useContext } from "react";
+import { SelectInputDispatchContext } from "../context/SelectInputContext";
 import { extractVolumeInfo } from "../helpers/extractVolumeInfo";
 import { fetchData } from "../helpers/fetchData";
 

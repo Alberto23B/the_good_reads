@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Card from "../components/Card";
 import search from "../img/search.png";
 import Loading from "./Loading";
 import { PageContext, PageDispatchContext } from "../context/PagesContext";
+import { SelectInputContext } from "../context/SelectInputContext";
 
 export default function Results({
   data,
@@ -13,6 +14,8 @@ export default function Results({
 }) {
   const { page } = useContext(PageContext);
   const { elementsInPage } = useContext(PageContext);
+  const isInputSelected = useContext(SelectInputContext);
+  const [hasAnimationRun, setHasAnimationRun] = useState(false);
   const dispatch = useContext(PageDispatchContext);
 
   useEffect(() => {
@@ -20,6 +23,12 @@ export default function Results({
       dispatch({ type: "set", elements: data.slice(0, 20) });
     }
   }, [data, dispatch]);
+
+  useEffect(() => {
+    if (isInputSelected === true) {
+      setHasAnimationRun(true);
+    }
+  }, [hasAnimationRun]);
 
   if (isLoading) {
     return <Loading />;
@@ -49,7 +58,9 @@ export default function Results({
   return (
     <>
       <div
-        className={`flex border border-slate-200 flex-row py-4 flex-wrap items-center justify-center lg:w-[80vw] rounded-b-md overflow-auto min-h-56 max-h-96 md:max-h-full display-results bg-teak dark:bg-cadet`}
+        className={`${
+          isInputSelected ? "min-h-72" : "min-h-56"
+        } flex border border-slate-200 flex-row py-4 flex-wrap items-center justify-center lg:w-[80vw] rounded-b-md overflow-auto min-h-56 max-h-96 md:max-h-full display-results bg-teak dark:bg-cadet`}
       >
         {data.length !== 0 && (
           <div className="flex justify-around w-full">

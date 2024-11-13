@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import Card from "../components/Card";
 import Loading from "../presentational/Loading";
+import { SelectInputContext } from "../context/SelectInputContext";
 import { PageContext, PageDispatchContext } from "../context/PagesContext";
 
 export default function Favorites({ favorites, setFavorites, isLoading }) {
   const { page } = useContext(PageContext);
   const { elementsInPage } = useContext(PageContext);
   const dispatch = useContext(PageDispatchContext);
+  const isInputSelected = useContext(SelectInputContext);
 
   useEffect(() => {
     if (favorites.length) {
@@ -46,7 +48,11 @@ export default function Favorites({ favorites, setFavorites, isLoading }) {
 
   return (
     <>
-      <div className="flex border border-slate-200 flex-row flex-wrap items-center justify-center lg:w-[80vw] min-h-56 display-results bg-teak dark:bg-cadet">
+      <div
+        className={`${
+          isInputSelected ? "min-h-72" : "min-h-56"
+        } flex border border-slate-200 flex-row flex-wrap items-center justify-center lg:w-[80vw] min-h-56 display-results bg-teak dark:bg-cadet`}
+      >
         <h3 className="w-full my-2 text-2xl font-light text-center ">
           Favorites
         </h3>

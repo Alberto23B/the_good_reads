@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Header from "./presentational/Header";
 import Quote from "./components/Quote";
 import Results from "./presentational/Results";
 import Favorites from "./presentational/Favorites";
@@ -33,13 +34,7 @@ function App() {
               <Nav>
                 <ToggleTheme />
               </Nav>
-              <header className="flex w-5/6 mx-auto mt-4 text-center">
-                <div className="w-full">
-                  <h1 className="mb-8 font-semibold text-8xl font-lcd">
-                    The Good Reads
-                  </h1>
-                </div>
-              </header>
+              <Header />
               <Quote />
               <SearchSection
                 setData={setData}
