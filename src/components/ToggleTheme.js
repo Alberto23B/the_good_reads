@@ -23,13 +23,22 @@ export default function ToggleTheme() {
   };
 
   return (
-    <select onChange={handleChange} className="bg-slate-400 dark:bg-slate-600">
-      <option key={1} value={"Light"}>
-        Light
-      </option>
-      <option key={2} value={"Dark"}>
-        Dark
-      </option>
-    </select>
+    <>
+      <label htmlFor="theme" className="pl-4">
+        Theme:
+      </label>
+      <select
+        className="ml-2 mr-4 dark:bg-cadet"
+        id="theme"
+        onChange={handleChange}
+      >
+        <option key={1} value={"Light"}>
+          Light
+        </option>
+        <option key={2} value={"Dark"}>
+          Dark
+        </option>
+      </select>
+    </>
   );
 }

@@ -49,7 +49,7 @@ export default function Results({
   return (
     <>
       <div
-        className={`flex flex-row py-4 flex-wrap items-center justify-center lg:w-[80vw] rounded-b-md overflow-auto min-h-56 max-h-96 md:max-h-full display-results dark:bg-zinc-800`}
+        className={`flex border border-slate-200 flex-row py-4 flex-wrap items-center justify-center lg:w-[80vw] rounded-b-md overflow-auto min-h-56 max-h-96 md:max-h-full display-results bg-teak dark:bg-cadet`}
       >
         {data.length !== 0 && (
           <div className="flex justify-around w-full">

@@ -6,8 +6,7 @@ import Favorites from "./presentational/Favorites";
 import Nav from "./presentational/Nav";
 import ToggleTheme from "./components/ToggleTheme";
 import SearchSection from "./presentational/SearchSection";
-import illustration1 from "./img/illustration1.svg";
-import illustration2 from "./img/illustration2.svg";
+import { SelectInputContextProvider } from "./context/SelectInputContext";
 import { DisplayContextProvider } from "./context/DisplayContext";
 import { PageContextProvider } from "./context/PagesContext";
 import { ThemeContextProvider } from "./context/ThemeContext";
@@ -23,64 +22,58 @@ function App() {
   const [showFavorites, setShowFavorites] = useState(false);
 
   return (
-    <ThemeContextProvider>
-      <DisplayContextProvider>
-        <PageContextProvider>
-          <div
-            className={`bg-cyan-200 dark:bg-black dark:text-stone-300
+    <SelectInputContextProvider>
+      <ThemeContextProvider>
+        <DisplayContextProvider>
+          <PageContextProvider>
+            <div
+              className={`bg-[#E2EEF0] dark:bg-cool dark:text-stone-300
             ${data.length && !showFavorites ? "h-full" : "h-[100vh]"}`}
-          >
-            <Nav>
-              <ToggleTheme />
-            </Nav>
-            <header className="flex w-5/6 mx-auto my-2 mt-10 text-center">
-              <img
-                className="hidden h-32 ml-20 md:block aspect-square"
-                src={illustration1}
-                alt="illustration-one"
-              ></img>
-              <div className="w-full">
-                <h1 className="mb-10 text-7xl font-lcd">The Good Reads</h1>
-              </div>
-              <img
-                className="hidden h-32 mr-20 md:block aspect-square"
-                src={illustration2}
-                alt="illustration-two"
-              ></img>
-            </header>
-            <Quote />
-            <SearchSection
-              setData={setData}
-              setIsLoading={setIsLoading}
-              setShowFavorites={setShowFavorites}
-              showFavorites={showFavorites}
-            />
-            {showFavorites ? (
-              <div className="min-h-fit">
-                <Favorites
-                  data={data}
-                  setShowFavorites={setShowFavorites}
-                  favorites={favorites}
-                  setFavorites={setFavorites}
-                  isLoading={isLoading}
-                  setIsLoading={setIsLoading}
-                />
-              </div>
-            ) : (
-              <div className="min-h-fit">
-                <Results
-                  data={data}
-                  favorites={favorites}
-                  setFavorites={setFavorites}
-                  isLoading={isLoading}
-                  setIsLoading={setIsLoading}
-                />
-              </div>
-            )}
-          </div>
-        </PageContextProvider>
-      </DisplayContextProvider>
-    </ThemeContextProvider>
+            >
+              <Nav>
+                <ToggleTheme />
+              </Nav>
+              <header className="flex w-5/6 mx-auto mt-4 text-center">
+                <div className="w-full">
+                  <h1 className="mb-8 font-semibold text-8xl font-lcd">
+                    The Good Reads
+                  </h1>
+                </div>
+              </header>
+              <Quote />
+              <SearchSection
+                setData={setData}
+                setIsLoading={setIsLoading}
+                setShowFavorites={setShowFavorites}
+                showFavorites={showFavorites}
+              />
+              {showFavorites ? (
+                <div className="min-h-fit">
+                  <Favorites
+                    data={data}
+                    setShowFavorites={setShowFavorites}
+                    favorites={favorites}
+                    setFavorites={setFavorites}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
+                  />
+                </div>
+              ) : (
+                <div className="min-h-fit">
+                  <Results
+                    data={data}
+                    favorites={favorites}
+                    setFavorites={setFavorites}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
+                  />
+                </div>
+              )}
+            </div>
+          </PageContextProvider>
+        </DisplayContextProvider>
+      </ThemeContextProvider>
+    </SelectInputContextProvider>
   );
 }
 

@@ -46,7 +46,7 @@ export default function Favorites({ favorites, setFavorites, isLoading }) {
 
   return (
     <>
-      <div className="flex flex-row flex-wrap items-center justify-center lg:w-[80vw] min-h-56 display-results">
+      <div className="flex border border-slate-200 flex-row flex-wrap items-center justify-center lg:w-[80vw] min-h-56 display-results bg-teak dark:bg-cadet">
         <h3 className="w-full my-2 text-2xl font-light text-center ">
           Favorites
         </h3>

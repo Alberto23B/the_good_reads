@@ -22,15 +22,10 @@ html {
     position: relative;
   }
 
-  button:hover {
-    background-color: rgb(30, 41, 59);
-  }
-
   button:active {
     background-color: rgb(42, 48, 54);
     box-shadow: none;
     top: 1px;
-    left: 1px;
   }
   input[type="submit"] {
     box-shadow: 0 2px #999;

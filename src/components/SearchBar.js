@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import {
+  SelectInputContext,
+  SelectInputDispatchContext,
+} from "../context/SelectInputContext";
 import { extractVolumeInfo } from "../helpers/extractVolumeInfo";
 import { fetchData } from "../helpers/fetchData";
 
 export default function SearchBar({ setData, setIsLoading, setShowFavorites }) {
   const [query, setQuery] = useState("");
+  const dispatch = useContext(SelectInputDispatchContext);
   let results = [];
 
   const handleClick = async (e) => {
@@ -27,13 +32,14 @@ export default function SearchBar({ setData, setIsLoading, setShowFavorites }) {
   };
 
   return (
-    <div className="items-center flex-none my-6 md:flex">
+    <div className="items-center flex-none my-2 md:flex">
       <form method="get" className="flex flex-col items-center md:flex-row">
         <input
-          className="h-10 px-3 rounded-md min-w-[40vw]"
+          className="h-10 px-3 rounded-md min-w-[40vw] border-slate-200 shadow-sm shadow-slate-600 border"
           type="search"
           name="q"
           value={query}
+          onFocus={() => dispatch({ type: true })}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Find your next read..."
           required
