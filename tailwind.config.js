@@ -4,10 +4,22 @@ module.exports = {
   darkMode: "selector",
   theme: {
     extend: {
+      keyframes: {
+        resizeTitle: {
+          "0%": { fontSize: "6rem" },
+          "100%": { fontSize: "3rem" },
+        },
+      },
+      animation: {
+        resizeTitle: "resizeTitle 1.2s ease-in-out forwards",
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        "cream": "#f2e9e4",
+        "cream": {
+          "100": "#f2e9e4",
+          "200": "#f2e3da",
+        },
         "teak": "#C9ADA7",
         "pearl": "#98685D",
         "iron": "#4A4E69",

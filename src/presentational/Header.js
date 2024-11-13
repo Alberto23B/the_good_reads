@@ -8,8 +8,8 @@ export default function Header() {
     <header className="flex w-5/6 mx-auto mt-4 text-center">
       <div className="w-full">
         <h1
-          className={`mb-8 font-semibold text-3xl md:${
-            isInputSelected ? "resize-title" : ""
+          className={`mb-8 font-semibold text-3xl ${
+            isInputSelected ? " md:animate-resizeTitle" : ""
           } sm:text-8xl font-lcd`}
         >
           The Good Reads

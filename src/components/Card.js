@@ -29,8 +29,8 @@ export default function Card({ data, i, favorites, setFavorites }) {
   return (
     <div
       key={i}
-      className={`flex sm:flex-row mx-1 my-2 bg-cream rounded-lg dark:bg-black
-        shadow-lg shadow-slate-600 dark:shadow-slate-900
+      className={`flex sm:flex-row mx-1 my-2 bg-cream-100 rounded-lg dark:bg-black
+        shadow-md shadow-slate-600 dark:shadow-slate-900
         ${display === "icons" ? "sm:w-80" : "w-11/12"} 
         ${display === "icons" ? "flex-col" : "sm: flex-row"}`}
     >
@@ -43,7 +43,7 @@ export default function Card({ data, i, favorites, setFavorites }) {
       </a>
       {display === "icons" && (
         <button
-          className="w-full px-2 text-white rounded-md bg-zinc-600 card-button sm:hidden"
+          className="w-full px-2 text-black rounded-md dark:text-white card-button sm:hidden"
           type="button"
           onClick={
             isFavorite
@@ -74,12 +74,12 @@ export default function Card({ data, i, favorites, setFavorites }) {
         </div>
         <div className="flex justify-center">
           <a href={data.info} rel="noopener noreferrer" target="_blank">
-            <button className="px-2 text-white rounded-md bg-zinc-600 w-fit card-button">
+            <button className="px-2 text-black rounded-md dark:shadow-none bg-cream-200 dark:bg-slate-900 dark:text-white w-fit ">
               More
             </button>
           </a>
           <button
-            className="px-2 mx-2 text-white rounded-md bg-zinc-600 w-fit card-button"
+            className="px-2 mx-2 text-black rounded-md dark:shadow-none bg-cream-200 dark:bg-slate-900 dark:text-white w-fit"
             type="button"
             onClick={
               isFavorite
