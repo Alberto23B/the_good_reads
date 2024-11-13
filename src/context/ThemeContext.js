@@ -16,7 +16,7 @@ function themeReducer(theme, action) {
   }
 }
 
-const initialTheme = "light";
+const initialTheme = localStorage.getItem("theme");
 
 export function ThemeContextProvider({ children }) {
   const [theme, dispatch] = useReducer(themeReducer, initialTheme);
