@@ -50,7 +50,7 @@ export default function Favorites({ favorites, setFavorites, isLoading }) {
     <>
       <div
         className={`${
-          isInputSelected ? "min-h-72" : "min-h-56"
+          isInputSelected ? "md:min-h-72" : "md:min-h-56"
         } flex border border-slate-200 flex-row flex-wrap items-center justify-center lg:w-[80vw] min-h-56 display-results dark:bg-cadet`}
       >
         <h3 className="w-full my-2 text-2xl font-light text-center ">
