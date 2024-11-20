@@ -14,7 +14,7 @@ export default function ToggleTheme() {
       localStorage.setItem("theme", theme);
       document.querySelector("body")?.classList.add("dark");
     } else {
-      throw Error("invalid theme");
+      localStorage.setItem("theme", "light");
     }
   }, [theme]);
 
