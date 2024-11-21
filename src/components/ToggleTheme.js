@@ -1,10 +1,10 @@
 import React from "react";
-import { ThemeDispatchContext, ThemeContext } from "../context/ThemeContext";
+import { NavbarDispatchContext, NavbarContext } from "../context/NavbarContext";
 import { useContext, useEffect } from "react";
 
 export default function ToggleTheme() {
-  const dispatch = useContext(ThemeDispatchContext);
-  const theme = useContext(ThemeContext);
+  const dispatch = useContext(NavbarDispatchContext);
+  const { theme } = useContext(NavbarContext);
 
   useEffect(() => {
     if (theme === "light") {
@@ -19,7 +19,7 @@ export default function ToggleTheme() {
   }, [theme]);
 
   const handleChange = (e) => {
-    dispatch({ type: `to${e.target.value}` });
+    dispatch({ type: `theme/to${e.target.value}` });
   };
 
   return (

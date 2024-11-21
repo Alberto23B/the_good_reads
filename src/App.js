@@ -5,12 +5,14 @@ import Quote from "./components/Quote";
 import Results from "./presentational/Results";
 import Favorites from "./presentational/Favorites";
 import Nav from "./presentational/Nav";
+import Contacts from "./components/Contancts";
+import About from "./components/About";
 import ToggleTheme from "./components/ToggleTheme";
 import SearchSection from "./presentational/SearchSection";
 import { SelectInputContextProvider } from "./context/SelectInputContext";
 import { DisplayContextProvider } from "./context/DisplayContext";
 import { PageContextProvider } from "./context/PagesContext";
-import { ThemeContextProvider } from "./context/ThemeContext";
+import { NavbarContextProvider } from "./context/NavbarContext";
 
 function App() {
   const [data, setData] = useState([]);
@@ -24,12 +26,14 @@ function App() {
 
   return (
     <SelectInputContextProvider>
-      <ThemeContextProvider>
+      <NavbarContextProvider>
         <DisplayContextProvider>
           <PageContextProvider>
             <div
               className={`bg-[#E2EEF0] dark:bg-cool dark:text-stone-300 h-screen overflow-auto gutter`}
             >
+              <Contacts />
+              <About />
               <Nav>
                 <ToggleTheme />
               </Nav>
@@ -66,7 +70,7 @@ function App() {
             </div>
           </PageContextProvider>
         </DisplayContextProvider>
-      </ThemeContextProvider>
+      </NavbarContextProvider>
     </SelectInputContextProvider>
   );
 }
