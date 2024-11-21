@@ -20,7 +20,7 @@ export default function SwitchList() {
   return (
     <div className="relative top-[3px]">
       <button
-        className={`w-12 hover:bg-cadet dark:hover:bg-iron px-2 text-white rounded-l-md h-fit bg-zinc-600 ${
+        className={`w-12 hover:bg-cadet dark:hover:bg-iron px-2 press text-white rounded-l-md h-fit bg-zinc-600 ${
           display === "icons" ? " top-[2px] shadow-none bg-zinc-800" : ""
         }`}
         onClick={handleClick}
@@ -33,7 +33,7 @@ export default function SwitchList() {
         />
       </button>
       <button
-        className={`w-12 hover:bg-cadet dark:hover:bg-iron px-2 text-white rounded-r-md ${
+        className={`w-12 hover:bg-cadet dark:hover:bg-iron px-2 press text-white rounded-r-md ${
           display === "list" ? " top-[2px] shadow-none bg-zinc-800" : ""
         } h-fit bg-zinc-600`}
         disabled={display === "list"}

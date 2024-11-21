@@ -15,17 +15,6 @@ html {
   footer {
     text-align: end;
   }
-
-  button {
-    box-shadow: 0 2px #999;
-    position: relative;
-  }
-
-  button:active {
-    background-color: rgb(42, 48, 54);
-    box-shadow: none;
-    top: 1px;
-  }
   input[type="submit"] {
     box-shadow: 0 2px #999;
   }
@@ -42,6 +31,17 @@ html {
 }
 
 @layer components {
+  .press {
+    box-shadow: 0 2px #999;
+    position: relative;
+  }
+
+  .press:active {
+    background-color: rgb(42, 48, 54);
+    box-shadow: none;
+    top: 1px;
+  }
+
   .gutter {
     scrollbar-gutter: stable;
   }
