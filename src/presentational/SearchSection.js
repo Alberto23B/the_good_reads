@@ -1,4 +1,5 @@
 import SearchBar from "../components/SearchBar";
+import ShowFavorites from "../components/ShowFavorites";
 import SwitchList from "../components/SwitchList";
 
 export default function SearchSection({
@@ -7,10 +8,6 @@ export default function SearchSection({
   setShowFavorites,
   showFavorites,
 }) {
-  const handleShowFavoritesClick = (e) => {
-    setShowFavorites(!showFavorites);
-  };
-
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center justify-center m-auto md:flex-row">
@@ -21,15 +18,10 @@ export default function SearchSection({
         />
       </div>
       <div className="flex items-center justify-end lg:w-[80vw] w-full border-slate-200 border rounded-t-md m-auto bg-pearl dark:bg-black ">
-        <button
-          type="button"
-          className={`w-24 hover:bg-cadet dark:hover:bg-iron text-white mx-2 rounded-md h-fit bg-zinc-600 press ${
-            showFavorites ? "top-[2px] shadow-none bg-zinc-800" : ""
-          }`}
-          onClick={handleShowFavoritesClick}
-        >
-          ♡
-        </button>
+        <ShowFavorites
+          setShowFavorites={setShowFavorites}
+          showFavorites={showFavorites}
+        />
         <SwitchList />
       </div>
     </div>

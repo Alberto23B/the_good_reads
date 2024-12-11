@@ -4,6 +4,7 @@ import Loading from "../presentational/Loading";
 import { SelectInputContext } from "../context/SelectInputContext";
 import { PageContext } from "../context/PagesContext";
 import ChangePageButton from "../components/ChangePageButton";
+import ClearAll from "../components/ClearAll";
 
 export default function Favorites({ favorites, setFavorites, isLoading }) {
   const { elementsInPage } = useContext(PageContext);
@@ -12,11 +13,6 @@ export default function Favorites({ favorites, setFavorites, isLoading }) {
   if (isLoading) {
     return <Loading />;
   }
-
-  const handleClearAll = () => {
-    localStorage.setItem("favorites", JSON.stringify([]));
-    setFavorites([]);
-  };
 
   return (
     <>
@@ -47,14 +43,7 @@ export default function Favorites({ favorites, setFavorites, isLoading }) {
         )}
         <ChangePageButton data={favorites} />
         <div className="w-full text-center">
-          {favorites.length !== 0 && (
-            <button
-              className="px-4 m-2 text-white rounded-md w-36 h-fit bg-zinc-600"
-              onClick={handleClearAll}
-            >
-              Clear All
-            </button>
-          )}
+          {favorites.length !== 0 && <ClearAll setFavorites={setFavorites} />}
         </div>
       </div>
     </>
